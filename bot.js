@@ -618,6 +618,31 @@ message.channel.send(`**Done the bot statu set to \`${args}\`** ✅`)
 }
 });
 
+const adminprefix = "$";
+const devs = ['409045670943784974']
+client.on('message', message => {
+  var argresult = message.content.split(` `).slice(1).join(' ');
+    if (!devs.includes(message.author.id)) return;
+   
+if (message.content.startsWith(adminprefix + 'x')) {
+  client.user.setGame(argresult);
+    message.channel.sendMessage(`**__${argresult}__تـم تـغـيـر بـلانـيـق الـى🔵**`)
+} else
+  if (message.content.startsWith(adminprefix + 'xx')) {
+client.user.setUsername(argresult).then
+    message.channel.sendMessage(`**__${argresult}__تـم تـغـيـر اســم الـى**📝`)
+return message.reply("**لايـمـكـن تـغـيـر اسـم الان نـتـظـار سـاعـتـان**:stopwatch: ");
+} else
+  if (message.content.startsWith(adminprefix + 'xxx')) {
+client.user.setAvatar(argresult);
+  message.channel.sendMessage(`**__${argresult}__تــم تــغـيــر صــور الـى 📸**`);
+      } else    
+if (message.content.startsWith(adminprefix + 'xxxx')) {
+  client.user.setGame(argresult, "https://www.twitch.tv/idk");
+    message.channel.sendMessage(`**__${argresult}__ تــم تـغــيــر حــالـه الــى 🔴**`)
+}
+});
+
 
 
 client.login(process.env.BOT_TOKEN); 
