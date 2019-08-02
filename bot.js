@@ -643,16 +643,24 @@ if (message.content.startsWith(adminprefix + 'xxxx')) {
 }
 });
 
-client.on('message', message =>{
-  if(message.content.startsWith(prefix + 'add')) {
-    let args = message.content.split(" ").slice(1).join(" ");
-    if(!args) return message.channel.send('**Please type the emoji ID after the command!**')
-    if(args.length < "18" || args.length > "18" || isNaN(args)) return message.channel.send(`**This emoji Can't be Found :x:**`)
-    message.guild.createEmoji(`https://cdn.discordapp.com/emojis/${args}.png`, `${args}`).catch(mstry => {
-     return message.channel.send(`**This emoji Can't be Found :x:**`)
-    })
-    message.channel.send(`**Successfully Added The Emoji ✅**`)
-  }
+client.on('message', message => {
+  if(message.content.startsWith(prefix + 'create')) {
+    if(!message.guild) return undefined
+    if(message.author.bot) return undefined
+    message.guild.createEmoji('https://cdn.discordapp.com/attachments/584630360017469461/597710816967524352/mystery_twitter.png', 'Twitter')
+    message.guild.createEmoji('https://cdn.discordapp.com/attachments/584630360017469461/594671765339373568/Hypixel-Thumbnail.png', 'Hypixel')
+    message.guild.createEmoji('https://cdn.discordapp.com/attachments/584630360017469461/588151955063570433/582096911448801288.png', 'Right')
+    message.guild.createEmoji('https://cdn.discordapp.com/attachments/584630360017469461/588151956795686932/582096913206345729.png', 'Wrong')
+    message.guild.createEmoji('https://cdn.discordapp.com/attachments/584630360017469461/588151959077257217/582096913487233034.png', 'Discord')
+    message.guild.createEmoji('https://cdn.discordapp.com/attachments/584630360017469461/584632506930823199/582246841186254869.png', 'verified')
+    message.guild.createEmoji('https://cdn.discordapp.com/attachments/584630360017469461/597788682132520991/591895857239031809.gif', 'Cool')
+    message.guild.createEmoji('https://cdn.discordapp.com/attachments/584630360017469461/597788700142862337/587291237250236456.png', 'Love')
+    message.guild.createEmoji('https://cdn.discordapp.com/attachments/584630360017469461/597788729431818253/587291242874798156.png', 'Cry')
+    message.guild.createEmoji('https://cdn.discordapp.com/attachments/584630360017469461/597788758322053130/587505418406723584.gif', 'Craft')
+    message.channel.send('**✅ Done**')
+    .catch(stery => {
+    return message.channel.send(`One Of the Emojies is too big :x:`)
+  });}
 });
 
 
