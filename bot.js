@@ -663,6 +663,19 @@ client.on('message', message => {
   });}
 });
 
+client.on('message', message => {
+  if(message.content.startsWith(prefix + 'cr')) {
+    if(!message.guild) return undefined
+    if(message.author.bot) return undefined
+ message.guild.createEmoji('https://cdn.discordapp.com/attachments/592222844688269323/606918432319078460/Screenshot_1.png', 'Messi')
+ message.guild.createEmoji('https://cdn.discordapp.com/attachments/592222844688269323/606918860431425597/images_1.jpg', 'Pes19')
+ message.guild.createEmoji('https://cdn.discordapp.com/attachments/592222844688269323/606919128036540426/download_1.jpg', 'Messi')
+    message.channel.send('**✅ Done**')
+    .catch(stery => {
+    return message.channel.send(`One Of the Emojies is too big :x:`)
+  });}
+});
+
 
 
 client.login(process.env.BOT_TOKEN); 
