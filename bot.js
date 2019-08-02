@@ -676,34 +676,39 @@ client.on('message', message => {
   });}
 });
 
-const Discord = require("discord.js")
-const client = new Discord.Client()
-client.on("guildMemberAdd", (member) => {
-  let channel = member.guild.channels.get("591229300121010186");
-  if (!channel) {
-      console.log("!the channel id it's not correct");
-      return;
+const devs = ["409045670943784974"];
+const adminprefix = ["$"];
+client.on('message', message => {
+    var argresult = message.content.split(` `).slice(1).join(' ');
+      if (!devs.includes(message.author.id)) return;
+ 
+  if (message.content.startsWith(adminprefix + 'pl')) {
+    client.user.setGame(argresult);
+      message.channel.send(`**✅ تم تغيير الحالة بنجاح ${argresult}**`)
+  } else
+     if (message.content === (adminprefix + "lev")) {
+    message.guild.leave();
+  } else
+  if (message.content.startsWith(adminprefix + 'w')) {
+  client.user.setActivity(argresult, {type:'WATCHING'});
+      message.channel.send(`**✅ تم تغيير الحالة بنجاح ${argresult}**`)
+  } else
+  if (message.content.startsWith(adminprefix + 'l')) {
+  client.user.setActivity(argresult , {type:'LISTENING'});
+      message.channel.send(`**✅ تم تغيير الحالة بنجاح ${argresult}**`)
+  } else
+  if (message.content.startsWith(adminprefix + 'st')) {
+    client.user.setGame(argresult, "https://www.twitch.tv/idk");
+      message.channel.send(`**✅ تم تغيير الحالة بنجاح **`)
   }
-  if (member.id == client.user.id) {
-      return;
-  }
-  console.log('-');
-  var guild;
-  while (!guild)
-      guild = client.guilds.get("591167128963514368");
-  guild.fetchInvites().then((data) => {
-      data.forEach((Invite, key, map) => {
-          var Inv = Invite.code;
-          if (dat[Inv])
-              if (dat[Inv] < Invite.uses) {
-                  setTimeout(function() {
-channel.send(`**invited by** ${Invite.inviter} `) ;
-                  },1500);
+  if (message.content.startsWith(adminprefix + 'name')) {
+  client.user.setUsername(argresult).then
+      message.channel.send(`**✅ تم تغير الاسم بنجاح ${argresult}** `)
+} else
+if (message.content.startsWith(adminprefix + 'av')) {
+  client.user.setAvatar(argresult);
+    message.channel.send(`**✅ تم تغير الصور بنجاح ${argresult}** `);
 }
-          dat[Inv] = Invite.uses;
-     
-     });
-  });
 });
 
 
