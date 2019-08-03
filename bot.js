@@ -676,15 +676,6 @@ client.on('message', message => {
   });}
 });
 
-client.on('guildMemberAdd', member => {
-const qq = member.guild.channels.get("591229300121010186");//ايدي الشات
-if(!qq) return;
-if(qq) {
-qq.send(**# Weelllcome 🌹.**);
-}
-});
-
-
 
 
 client.login(process.env.BOT_TOKEN); 
