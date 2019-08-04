@@ -1,14 +1,48 @@
 {
-  "name": "broadcast-bot",
-  "version": "1.0.0",
-  "description": "",
-  "main": "bot.js",
+  "name": "guidebot",
+  "version": "2.0.3",
+  "description": "A boilerplate example bot with command handler and reloadable commands. Updated and Maintained by the Idiot's Guide Community",
+  "main": "node Bot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node Bot.js"
   },
-  "author": "",
-  "license": "ISC",
+  "engines": {
+    "node": "8.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/An-Idiots-Guide/guidebot.git"
+  },
+  "author": "The Idiot's Guide Community",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/An-Idiots-Guide/guidebot/issues"
+  },
+  "homepage": "https://github.com/An-Idiots-Guide/guidebot#readme",
   "dependencies": {
-    "discord.js": "^11.4.2"
+    "analyrics": "^1.2.0",
+    "blocksmc": "^3.5.8",
+    "canvas": "^2.5.0",
+    "canvas-prebuilt": "^1.6.11",
+    "discord.js": "^11.4.2",
+    "enmap": "^4.8.4",
+    "express": "^4.16.4",
+    "fs": "^0.0.2",
+    "fs-nextra": "^0.4.5",
+    "hastebin-gen": "^2.0.4",
+    "hypixel-api": "^1.1.0",
+    "jimp": "^0.6.4",
+    "moment": "^2.24.0",
+    "moment-duration-format": "^2.2.2",
+    "ms": "^2.1.1",
+    "pretty-ms": "^5.0.0",
+    "quick.db": "^6.3.2",
+    "random-puppy": "^1.1.0",
+    "snekfetch": "^4.0.4",
+    "sql": "^0.78.0",
+    "sqlite": "^3.0.3",
+    "sqlite3": "^4.0.8",
+    "to-time": "^1.0.2"
   }
 }
